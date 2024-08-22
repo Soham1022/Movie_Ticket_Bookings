@@ -24,9 +24,9 @@ const movieSchema= mongoose.Schema({
     featured:{
         type:Boolean,
     },
-    bookings:[{type:mongoose.Types.ObjectId, ref:"Booking"}],
+    bookings:[{type:mongoose.Schema.Types.ObjectId, ref:"Booking"}],
     admin:{
-        type:mongoose.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"Admin",
        required: true
     }

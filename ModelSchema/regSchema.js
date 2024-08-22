@@ -20,7 +20,7 @@ const regSchema=mongoose.Schema({
         required:true,
         length:10
     },
-    bookings:[{type:mongoose.Types.ObjectId, ref:"Booking"}]
+    bookings:[{type:mongoose.Schema.Types.ObjectId, ref:"Booking"}]
 })
 
 
