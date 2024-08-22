@@ -10,16 +10,18 @@ const Auth = () => {
   const navigate= useNavigate();
   const disPatch=useDispatch();
   const onResRecive=(data)=>{
-    console.log(data);
     disPatch(userActions.login());
-    localStorage.setItem("user",data._id)
+    localStorage.setItem("user",data.id)
     navigate('/');
   }
-   const getData =(data)=>{
+   const getData =async (data)=>{
       console.log("Auth ",data.id);
-      sendUserAuthReq(data.inputs,data.signup)
-      .then(onResRecive)
-      .catch((err)=>console.log(err))
+      try {
+        const result = await sendUserAuthReq(data.inputs,data.signup);
+        onResRecive(result)
+      } catch (error) {
+        console.log(error)
+      }
     };
   return (
     <div>    
