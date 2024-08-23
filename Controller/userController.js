@@ -42,7 +42,7 @@ class regUser {
         if (!pass) {
             res.status(404).json({ msg: "Invalid Password" })
         }        
-        res.status(200).json({ msg: `${user.name} Logged In ....${user._id}`});
+        res.status(200).json({ id: user._id});
 
     }}
     catch (error) {

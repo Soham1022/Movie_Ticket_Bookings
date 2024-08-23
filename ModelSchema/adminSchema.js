@@ -20,7 +20,7 @@ const adminSchema= new mongoose.Schema({
     },
     addmovies:[
             {
-                type:mongoose.Types.ObjectId,
+                type:mongoose.Schema.Types.ObjectId,
                 ref:"Movie"
             }]
     
