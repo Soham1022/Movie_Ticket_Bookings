@@ -15,7 +15,7 @@ const UserProfile = () => {
       .catch((err) => console.log(err));
 
     getUserDetails()
-      .then((res) => setUser(res.User))
+      .then((res) => setUser(res.user))
       .catch((err) => console.log(err));
   }, []);
   const handleDelete = (id) => {
@@ -26,8 +26,8 @@ const UserProfile = () => {
   return (
     <Box width={"100%"} display="flex">
       <Fragment>
-        {/* {" "}*/}
-        {/* {User && (  */}
+        {" "}
+        {User && ( 
           <Box
             flexDirection={"column"}
             justifyContent="center"
@@ -38,7 +38,6 @@ const UserProfile = () => {
             <AccountCircleIcon
               sx={{ fontSize: "10rem", textAlign: "center", ml: 3 }}
             />
-            {User && User.map((user)=>(<>
             <Typography
               padding={1}
               width={"auto"}
@@ -46,7 +45,7 @@ const UserProfile = () => {
               border={"1px solid #ccc"}
               borderRadius={6}
             >
-              Name: {user.name}
+              Name: {User.name}
             </Typography>
             <Typography
               mt={1}
@@ -56,11 +55,10 @@ const UserProfile = () => {
               border={"1px solid #ccc"}
               borderRadius={6}
             >
-              Email: {user.email}
+              Email: {User.email}
             </Typography>
-            </>))}
           </Box>
-         {/* )}  */}
+          )} 
         {bookings && (
           <Box width={"70%"} display="flex" flexDirection={"column"}>
             <Typography
